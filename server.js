@@ -10,6 +10,10 @@ connectDB();
 
 // Middleware
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Serve static files from public folder
+app.use(express.static('public'));
 
 // Routes
 app.use('/api/auth', authRoutes);
@@ -19,9 +23,9 @@ app.get('/api/health', (req, res) => {
   res.json({ message: 'Server is running' });
 });
 
-// 404 handler
-app.use((req, res) => {
-  res.status(404).json({ message: 'Route not found' });
+// Serve index.html for all other routes (SPA)
+app.get('*', (req, res) => {
+  res.sendFile(__dirname + '/public/index.html');
 });
 
 // Error handling middleware
