@@ -1,0 +1,11 @@
+# Use this workspace to collaborate
+workspace:
+  id: b4a3e2ea-42c0-4cc2-8cb8-fef427656369
+
+localResources:
+  collections:
+    - ..\postman-collection.json
+
+cloudResources:
+  collections:
+    ..\postman\collections\Authentication System API: 1f5c773c-e3f2-4aab-a709-89083ea1eab1

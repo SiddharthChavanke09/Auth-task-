@@ -1,0 +1,5 @@
+$kind: collection
+description: JWT Authentication with Access and Refresh Tokens
+variables:
+  accessToken: ""
+  refreshToken: ""
